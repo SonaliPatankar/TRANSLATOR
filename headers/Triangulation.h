@@ -14,7 +14,6 @@ class Triangulation
         vector<Triangle>& triangles();
         vector<Point3D>& uniquePoints();
         
-    // private :Point3D findKey(std::map<Point3D, int> &nMapedCoordinates,int index);
     private:
         vector<Triangle> mTriangles;
         vector<Point3D> mUniquePoints;

@@ -5,9 +5,8 @@
 #include <vector>
 #include "../headers/Point3D.h"
 using namespace std;
-using namespace geometry;
 
-void  OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
+void geometry :: OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
 {
      std::ofstream outFile(filePath);
  
@@ -17,15 +16,19 @@ void  OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
     }
  
     vector<Point3D> &points = triangulation.uniquePoints();
-    
- 
     vector<Triangle> &triangles = triangulation.triangles();
+
+    // Write each triangle's vertices to the OBJ file
     for (const Triangle &triangle : triangles)
     {
-
-        outFile << points[triangle.v1()-1].x() << " " << points[triangle.v1()-1].y() << " " << points[triangle.v1()-1].z() << endl;
-        outFile << points[triangle.v2()-1].x() << " " << points[triangle.v2()-1].y() << " " << points[triangle.v2()-1].z() << endl;
-        outFile << points[triangle.v3()-1].x() << " " << points[triangle.v3()-1].y() << " " << points[triangle.v3()-1].z() << endl;
+        // Triangle vertices are 1-based, so subtract 1 to get the correct index
+        outFile << "v " << points[triangle.v1() - 1].x() << " " << points[triangle.v1() - 1].y() << " " << points[triangle.v1() - 1].z() << endl;
+        outFile << "v " << points[triangle.v2() - 1].x() << " " << points[triangle.v2() - 1].y() << " " << points[triangle.v2() - 1].z() << endl;
+        outFile << "v " << points[triangle.v3() - 1].x() << " " << points[triangle.v3() - 1].y() << " " << points[triangle.v3() - 1].z() << endl;
     }
+
+    // Close the OBJ file
     outFile.close();
+
+    cout << "Data written from Triangulation to OBJ file successfully!" << endl;
 }

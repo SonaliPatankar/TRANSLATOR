@@ -9,6 +9,7 @@ namespace geometry
     class StlToObj
     {
     public:
-        void stlToObjConversion(std::string &filePath,Triangulation &triangulation);
+        // Function to convert STL file to OBJ format
+        void stlToObjConversion(std::string &filePath, Triangulation &triangulation);
     };
 }

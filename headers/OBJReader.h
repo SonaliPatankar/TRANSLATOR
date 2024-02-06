@@ -1,13 +1,16 @@
 #pragma once
+
 #include <vector>
-#include<string>
+#include <string>
 #include "Triangulation.h"
 
 namespace geometry
 {
+    // Class responsible for reading OBJ files
     class OBJReader
     {
     public:
-        void readOBJ(std::string &filePath,Triangulation &triangulation);
+        // Reads an OBJ file
+        void readOBJ(std::string &filePath, Triangulation &triangulation);
     };
 }

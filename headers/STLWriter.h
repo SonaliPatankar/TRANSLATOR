@@ -10,6 +10,7 @@ namespace geometry
     class STLWriter
     {
     public:
-        void writeSTLToFile(std::string &filePath ,Triangulation &triangulationObj);
+        // Function to write geometry data to an STL file
+        void writeSTLToFile(std::string &filePath, Triangulation &triangulationObj);
     };
 }

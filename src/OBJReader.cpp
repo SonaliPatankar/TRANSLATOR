@@ -4,70 +4,59 @@
 #include <sstream>
 #include <vector>
 #include "../headers/Point3D.h"
+
 using namespace std;
-using namespace geometry;
 
-void OBJReader ::readOBJ(std::string &filePath,Triangulation &triangulation)
-{
-    // std::vector<Point3D> points;
-
+void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
+{  
     std::ifstream file(filePath);
     if (!file.is_open())
     {
-        std::cerr << "Error opening file: " << std::endl;
+        std::cerr << "Error opening file: " << filePath << std::endl;
+        return; 
     }
 
     std::string line;
-    istringstream iss(line);
     string keyword;
+
+    // Read each line of the OBJ file
     while (std::getline(file, line))
     {
-
-        if (line.find("v") != string::npos) // Taking inputs of v as vertices
+        // Check if the line contains vertex information (starting with "v")
+        if (line.find("v") != string::npos)
         {
             double x, y, z;
             istringstream iss(line);
-            string keyword;
             iss >> keyword >> x >> y >> z;
 
             if (keyword == "v")
             {
-
+                // Create a Point3D object and add it to the Triangulation's list of unique points
                 Point3D P1(x, y, z);
-
                 triangulation.uniquePoints().push_back(P1);
             }
         }
 
-        if (line.find("f") != string::npos) // Checking the face values
+        // Check if the line contains face information (starting with "f")
+        if (line.find("f") != string::npos)
         {
             string x, y, z;
             istringstream iss(line);
-            string keyword;
             iss >> keyword >> x >> y >> z;
 
             if (keyword == "f")
             {
-
-                int v1, v2, v3; // converting string into int
-                v1 = x[0];
-                v1 -= 48;
-                v2 = y[0];
-                v2 -= 48;
-                v3 = z[0];
-                v3 -= 48;
+                // Convert string vertex indices to integers and create a Triangle object
+                int v1, v2, v3;
+                v1 = stoi(x) - 1;
+                v2 = stoi(y) - 1;
+                v3 = stoi(z) - 1;
 
                 Triangle T(v1, v2, v3);
                 triangulation.triangles().push_back(T);
             }
         }
     }
-// vector<Triangle> &triangles = triangulation.triangles();
-//     for (const Triangle &triangle : triangles)
-//     {
-    
-// }
-
-    cout << triangulation.triangles().size();
+    cout << "Number of triangles: " << triangulation.triangles().size() << endl;
     file.close();
 }
