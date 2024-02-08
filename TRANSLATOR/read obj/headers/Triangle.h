@@ -1,7 +1,7 @@
 #pragma once
 #include "Point3D.h"
 
-namespace geometry
+namespace Shape3D
 {
     class Triangle {
 public:

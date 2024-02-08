@@ -4,7 +4,7 @@
 #include"Triangle.h"
 using namespace std;
 
-namespace geometry
+namespace Shape3D
 {
 class Triangulation
 {

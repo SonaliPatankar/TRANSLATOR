@@ -1,24 +1,24 @@
 #include "../headers/Point3D.h"
 
-geometry :: Point3D::Point3D() : mX(0), mY(0), mZ(0) {}
+Shape3D :: Point3D::Point3D() : mX(0), mY(0), mZ(0) {}
 
-geometry :: Point3D::Point3D(double x, double y, double z) : mX(x), mY(y), mZ(z) {}
+Shape3D :: Point3D::Point3D(double x, double y, double z) : mX(x), mY(y), mZ(z) {}
 
-geometry :: Point3D::~Point3D() {}
+Shape3D :: Point3D::~Point3D() {}
 
-double geometry :: Point3D::x() const {
+double Shape3D :: Point3D::x() const {
     return mX;
 }
 
-double geometry :: Point3D::y() const {
+double Shape3D :: Point3D::y() const {
     return mY;
 }
 
-double geometry :: Point3D::z() const {
+double Shape3D :: Point3D::z() const {
     return mZ;
 }
 
-bool geometry :: Point3D::operator<(const Point3D &other) const
+bool Shape3D :: Point3D::operator<(const Point3D &other) const
 {
     if (mX < other.mX)
         return true;

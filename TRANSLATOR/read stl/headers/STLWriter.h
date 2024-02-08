@@ -1,11 +1,9 @@
 // STLWriter.h
 #pragma once
 #include <string>
-#include <vector>
-#include "Triangle.h"
-#include"Triangulation.h"
-#include<map>
-namespace geometry
+#include "Triangulation.h"
+
+namespace Shape3D
 {
     class STLWriter
     {

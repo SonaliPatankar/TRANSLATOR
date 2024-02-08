@@ -1,13 +1,9 @@
-#include "../headers/OBJReader.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include "../headers/Point3D.h"
+#include "../headers/OBJReader.h"
 
-using namespace std;
-
-void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
+void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
 {
     std::ifstream file(filePath);
     if (!file.is_open())

@@ -1,11 +1,9 @@
-#include "../headers/STLReader.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
-using namespace std;
-using namespace geometry;
+#include "../headers/STLReader.h"
 
-void STLReader ::readSTL(std::string &filePath,Triangulation &triangulation)
+void Shape3D::STLReader ::readSTL(std::string &filePath,Triangulation &triangulation)
 {
     std::ifstream inputFile(filePath);
     if (!inputFile.is_open())

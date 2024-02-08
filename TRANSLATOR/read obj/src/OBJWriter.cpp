@@ -1,12 +1,9 @@
-#include "../headers/OBJWriter.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include "../headers/Point3D.h"
-using namespace std;
+#include "../headers/OBJWriter.h"
 
-void geometry :: OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
+void Shape3D :: OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
 {
      std::ofstream outFile(filePath);
  

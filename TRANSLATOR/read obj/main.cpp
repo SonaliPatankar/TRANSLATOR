@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include "./headers/Point3D.h"
 #include "./headers/OBJReader.h"
 #include "./headers/OBJWriter.h"
 #include "./headers/Triangulation.h"
@@ -9,13 +7,13 @@ int main()
 {
     try
     {
-        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/read obj/inputfiles/cube1.obj";
+        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/read obj/inputfiles/Sphere.obj";
         string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/read obj/outputfiles/writeObj.txt";
-        geometry::Triangulation triangulation;
-        geometry::OBJReader objReader;
+        Shape3D::Triangulation triangulation;
+        Shape3D::OBJReader objReader;
         objReader.readOBJ(filepath, triangulation);
 
-        geometry::OBJWriter objWriter;
+        Shape3D::OBJWriter objWriter;
         objWriter.writeOBJ(filepath1, triangulation);
     }
     catch (const std::exception &e)

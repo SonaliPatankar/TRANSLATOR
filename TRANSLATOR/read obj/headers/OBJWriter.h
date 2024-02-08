@@ -1,10 +1,8 @@
 #pragma once
-#include <vector>
 #include<string>
-#include "Triangle.h"
 #include"Triangulation.h"
 
-namespace geometry
+namespace Shape3D
 {
     class OBJWriter
     {

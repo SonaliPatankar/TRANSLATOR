@@ -1,12 +1,11 @@
-#include "../headers/StlToObj.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include "../headers/Point3D.h"
+#include "../headers/StlToObj.h"
+
 using namespace std;
 
-void geometry :: StlToObj ::stlToObjConversion(std::string &filePath, Triangulation &triangulation)
+void Shape3D :: StlToObj ::stlToObjConversion(std::string &filePath, Triangulation &triangulation)
 {
     ofstream outFile(filePath);
 

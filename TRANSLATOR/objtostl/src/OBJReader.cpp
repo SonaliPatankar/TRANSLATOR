@@ -1,13 +1,9 @@
-#include "../headers/OBJReader.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include "../headers/Point3D.h"
+#include "../headers/OBJReader.h"
 
-using namespace std;
-
-void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
+void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
 {
     std::ifstream file(filePath);
     if (!file.is_open())
@@ -17,7 +13,7 @@ void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangul
     }
 
     std::string line;
-    string keyword;
+    string token;
     // Read each line of the OBJ file
     while (std::getline(file, line))
     {
@@ -26,9 +22,9 @@ void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangul
         {
             double x, y, z;
             istringstream iss(line);
-            iss >> keyword >> x >> y >> z;
+            iss >> token >> x >> y >> z;
 
-            if (keyword == "v")
+            if (token == "v")
             {
                 // Create a Point3D object and add it to the Triangulation's list of unique points
                 Point3D point(x, y, z);
@@ -42,9 +38,9 @@ void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangul
             double y;
             double z;
             istringstream iss(line);
-            iss >> keyword >> x >> y >> z;
+            iss >> token >> x >> y >> z;
 
-            if (keyword == "vn")
+            if (token == "vn")
             {
                 // Create a Point3D object and add it to the Triangulation's list of unique points
                 Point3D point(x, y, z);
@@ -56,9 +52,9 @@ void geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangul
         {
             string x, y, z;
             istringstream iss(line);
-            iss >> keyword >> x >> y >> z;
+            iss >> token >> x >> y >> z;
 
-            if (keyword == "f")
+            if (token == "f")
             {
                 // Convert string vertex indices to integers and create a Triangle object
                 int v1;

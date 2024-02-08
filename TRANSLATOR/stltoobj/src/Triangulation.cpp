@@ -1,27 +1,23 @@
 #include "..\headers\Triangulation.h"
-#include <map>
-#include <vector>
-#include <iostream>
-using namespace geometry;
 
-Triangulation::Triangulation()
+Shape3D::Triangulation::Triangulation()
 {
 }
-Triangulation::~Triangulation()
+Shape3D::Triangulation::~Triangulation()
 {
 }
 
-vector<Triangle> &Triangulation::triangles()
+vector<Shape3D::Triangle> &Shape3D::Triangulation::triangles()
 {
     return mTriangles;
 }
 
-vector<Point3D> &Triangulation::uniquePoints()
+vector<Shape3D::Point3D> &Shape3D::Triangulation::uniquePoints()
 {
     return mUniquePoints;
 }
 
-vector<Point3D> &Triangulation :: uniqueNormals()
+vector<Shape3D::Point3D> &Shape3D::Triangulation :: uniqueNormals()
 {
     return mUniqeNormals;
 }

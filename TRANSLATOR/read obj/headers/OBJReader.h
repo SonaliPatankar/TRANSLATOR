@@ -1,12 +1,10 @@
 #pragma once
 
-#include <vector>
 #include <string>
 #include "Triangulation.h"
 
-namespace geometry
+namespace Shape3D
 {
-    // Class responsible for reading OBJ files
     class OBJReader
     {
     public:

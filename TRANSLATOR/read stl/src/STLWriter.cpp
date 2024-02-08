@@ -1,13 +1,9 @@
-// STLWriter.cpp
-#include "../headers/STLWriter.h"
-#include "../headers/Triangulation.h"
 #include <fstream>
 #include <stdexcept>
 #include <iostream>
-using namespace std;
-using namespace geometry;
+#include "../headers/STLWriter.h"
 
-void geometry ::STLWriter ::writeSTLToFile(std::string &filePath, Triangulation &triangulationObj)
+void Shape3D ::STLWriter ::writeSTLToFile(std::string &filePath, Triangulation &triangulationObj)
 {
     std::ofstream outFile(filePath);
 

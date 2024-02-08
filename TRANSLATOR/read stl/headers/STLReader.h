@@ -1,11 +1,9 @@
 #pragma once
 
-#include <map>
 #include <string>
-#include <vector>
 #include "Triangulation.h"
 
-namespace geometry
+namespace Shape3D
 {
     class STLReader
     {

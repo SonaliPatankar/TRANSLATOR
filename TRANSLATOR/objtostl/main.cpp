@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include "./headers/Point3D.h"
 #include "./headers/OBJReader.h"
 #include "./headers/Triangulation.h"
 #include "./headers/ObjToStl.h"
@@ -11,11 +9,11 @@ int main()
     {
         string filepath = "D:/sonali_workspace/C++/TRANSLATOR/objtostl/inputfiles/cube1.obj";
         string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/objtostl/outputfiles/objtostl.stl";
-        geometry::Triangulation triangulation;
-        geometry::OBJReader objReader;
+        Shape3D::Triangulation triangulation;
+        Shape3D::OBJReader objReader;
         objReader.readOBJ(filepath, triangulation);
 
-        geometry::ObjToStl objToStl;
+        Shape3D::ObjToStl objToStl;
         objToStl.objToStlConversion(filepath1, triangulation);
     }
     catch (const std::exception &e)
