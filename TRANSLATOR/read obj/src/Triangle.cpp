@@ -1,26 +1,21 @@
 #include "../headers/Triangle.h"
 
-Shape3D::Triangle::Triangle(int v1, int v2, int v3,int normalIndex) : mV1(v1), mV2(v2), mV3(v3) ,mNormalIndex(normalIndex){}
+Geometry::Triangle::Triangle(int v1, int v2, int v3) : mV1(v1), mV2(v2), mV3(v3){}
 
-Shape3D::Triangle::~Triangle()
+Geometry::Triangle::~Triangle()
 {
 }
-const int Shape3D::Triangle::v1() const
+const int Geometry::Triangle::v1() const
 {
     return mV1;
 }
 
-const int Shape3D::Triangle::v2() const
+const int Geometry::Triangle::v2() const
 {
     return mV2;
 }
 
-const int Shape3D::Triangle::v3() const
+const int Geometry::Triangle::v3() const
 {
     return mV3;
-}
-
-const int Shape3D::Triangle::normalIndex() const
-{
-    return mNormalIndex;
 }

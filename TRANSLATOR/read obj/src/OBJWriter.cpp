@@ -3,7 +3,7 @@
 #include <sstream>
 #include "../headers/OBJWriter.h"
 
-void Shape3D :: OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
+void Geometry :: OBJWriter::  writeOBJ(std::string &filePath,Triangulation &triangulation)
 {
      std::ofstream outFile(filePath);
  

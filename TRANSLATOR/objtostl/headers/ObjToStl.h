@@ -3,7 +3,7 @@
 #include "Triangle.h"
 #include"Triangulation.h"
 
-namespace Shape3D
+namespace Geometry
 {
     class ObjToStl
     {

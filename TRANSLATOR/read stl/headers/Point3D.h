@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Shape3D
+namespace Geometry
 {
     class Point3D
     {

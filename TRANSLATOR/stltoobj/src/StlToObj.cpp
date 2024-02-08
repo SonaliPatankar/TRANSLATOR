@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void Shape3D :: StlToObj ::stlToObjConversion(std::string &filePath, Triangulation &triangulation)
+void Geometry :: StlToObj ::stlToObjConversion(std::string &filePath, Triangulation &triangulation)
 {
     ofstream outFile(filePath);
 
@@ -39,7 +39,7 @@ void Shape3D :: StlToObj ::stlToObjConversion(std::string &filePath, Triangulati
     {
         // In OBJ format, vertex indices are 1-based, so add 1 to each index
         outFile << "f"
-                << " " << triangle.v1() + 1 << "//"<<triangle.normalIndex()+1
+                << " " << triangle.v1() + 1 << "//"<<triangle.normalIndex() +1
                 << " " << triangle.v2() + 1 << "//"<<triangle.normalIndex()+1
                 << " " << triangle.v3() + 1 << "//"<<triangle.normalIndex()+1 << endl;
     }

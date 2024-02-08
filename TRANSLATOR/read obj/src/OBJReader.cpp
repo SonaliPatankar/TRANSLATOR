@@ -3,7 +3,7 @@
 #include <sstream>
 #include "../headers/OBJReader.h"
 
-void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
+void Geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
 {
     std::ifstream file(filePath);
     if (!file.is_open())
@@ -32,21 +32,6 @@ void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangula
             }
         }
 
-        if (line.find("vn") != string::npos)
-        {
-            double x;
-            double y;
-            double z;
-            istringstream iss(line);
-            iss >> keyword >> x >> y >> z;
-
-            if (keyword == "vn")
-            {
-                // Create a Point3D object and add it to the Triangulation's list of unique points
-                Point3D point(x, y, z);
-                triangulation.uniqueNormals().push_back(point);
-            }
-        }
         // Check if the line contains face information (starting with "f")
         if (line.find("f") != string::npos)
         {
@@ -73,8 +58,7 @@ void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangula
                         break;
                     }
                 }
-
-                Triangle T(v1, v2, v3, normalIndex - 1);
+                Triangle T(v1, v2, v3);
                 triangulation.triangles().push_back(T);
             }
         }

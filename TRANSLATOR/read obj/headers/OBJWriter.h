@@ -2,7 +2,7 @@
 #include<string>
 #include"Triangulation.h"
 
-namespace Shape3D
+namespace Geometry
 {
     class OBJWriter
     {

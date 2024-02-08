@@ -7,13 +7,13 @@ int main()
 {
     try
     {
-        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/stltoobj/inputfiles/cube.stl";
-        string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/stltoobj/outputfiles/stltoobj.obj";
-        Shape3D::Triangulation triangulation;
-        Shape3D::STLReader stlReader;
+        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/stltoobj/resources/cube.stl";
+        string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/stltoobj/output/stltoobj.obj";
+        Geometry::Triangulation triangulation;
+        Geometry::STLReader stlReader;
         stlReader.readSTL(filepath, triangulation);
 
-        Shape3D::StlToObj stlToObj;
+        Geometry::StlToObj stlToObj;
         stlToObj.stlToObjConversion(filepath1, triangulation);
     }
     catch (const std::exception &e)

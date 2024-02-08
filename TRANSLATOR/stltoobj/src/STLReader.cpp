@@ -3,7 +3,7 @@
 #include <sstream>
 #include "../headers/STLReader.h"
 
-void Shape3D :: STLReader ::readSTL(std::string &filePath,Triangulation &triangulation)
+void Geometry :: STLReader ::readSTL(std::string &filePath,Triangulation &triangulation)
 {
     std::ifstream inputFile(filePath);
     if (!inputFile.is_open())
@@ -94,7 +94,9 @@ void Shape3D :: STLReader ::readSTL(std::string &filePath,Triangulation &triangu
         // When three vertices are processed, create a triangle and reset count
         if (count == 4)
         {
-            triangulation.triangles().push_back(Triangle(index1, index2, index3, normalIndex));
+            Triangle triangle(index1, index2, index3);
+            triangle.setNormalIndex(normalIndex);
+            triangulation.triangles().push_back(triangle);
             count = 1;
         }
     }

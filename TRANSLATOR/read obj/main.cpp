@@ -7,13 +7,13 @@ int main()
 {
     try
     {
-        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/read obj/inputfiles/Sphere.obj";
-        string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/read obj/outputfiles/writeObj.txt";
-        Shape3D::Triangulation triangulation;
-        Shape3D::OBJReader objReader;
+        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/read obj/resources/cube1.obj";
+        string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/read obj/output/writeObj.txt";
+        Geometry::Triangulation triangulation;
+        Geometry::OBJReader objReader;
         objReader.readOBJ(filepath, triangulation);
 
-        Shape3D::OBJWriter objWriter;
+        Geometry::OBJWriter objWriter;
         objWriter.writeOBJ(filepath1, triangulation);
     }
     catch (const std::exception &e)

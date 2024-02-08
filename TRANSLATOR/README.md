@@ -1,4 +1,4 @@
-# TRANSLATOR:
+# TRNSLATOR:
 1. Optimize the Triangulation DS
 2. read .obj file
 3. convert .stl file to .obj file

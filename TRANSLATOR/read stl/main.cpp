@@ -8,13 +8,13 @@ int main()
 {
     try
     {
-        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/READ STL/inputfiles/cube.stl";
-        string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/READ STL/outputfiles/writeSTL.txt";
-        Shape3D::Triangulation triangulation;
-        Shape3D::STLReader stlReader;
+        string filepath = "D:/sonali_workspace/C++/TRANSLATOR/READ STL/resources/cube.stl";
+        string filepath1 = "D:/sonali_workspace/C++/TRANSLATOR/READ STL/output/writeSTL.txt";
+        Geometry::Triangulation triangulation;
+        Geometry::STLReader stlReader;
         stlReader.readSTL(filepath, triangulation);
 
-        Shape3D::STLWriter stlWriter;
+        Geometry::STLWriter stlWriter;
         stlWriter.writeSTLToFile(filepath1, triangulation);
     }
     catch (const std::exception &e)

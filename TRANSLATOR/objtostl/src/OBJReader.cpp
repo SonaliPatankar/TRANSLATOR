@@ -3,7 +3,7 @@
 #include <sstream>
 #include "../headers/OBJReader.h"
 
-void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
+void Geometry::OBJReader::readOBJ(std::string &filePath, Triangulation &triangulation)
 {
     std::ifstream file(filePath);
     if (!file.is_open())
@@ -60,6 +60,7 @@ void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangula
                 int v1;
                 int v2;
                 int v3;
+                cout<<x<<endl;
                 int normalIndex;
                 v1 = stoi(x) - 1;
                 v2 = stoi(y) - 1;
@@ -73,8 +74,9 @@ void Shape3D::OBJReader::readOBJ(std::string &filePath, Triangulation &triangula
                         break;
                     }
                 }
-                Triangle T(v1, v2, v3, normalIndex - 1);
-                triangulation.triangles().push_back(T);
+                Triangle triangle(v1, v2, v3);
+                triangle.setNormalIndex(normalIndex);
+                triangulation.triangles().push_back(triangle);
             }
         }
     }

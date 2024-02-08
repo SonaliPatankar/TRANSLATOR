@@ -3,7 +3,7 @@
 #include <iostream>
 #include "../headers/STLWriter.h"
 
-void Shape3D ::STLWriter ::writeSTLToFile(std::string &filePath, Triangulation &triangulationObj)
+void Geometry ::STLWriter ::writeSTLToFile(std::string &filePath, Triangulation &triangulationObj)
 {
     std::ofstream outFile(filePath);
 

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void Shape3D :: ObjToStl::objToStlConversion(std::string &filePath, Triangulation &triangulation)
+void Geometry :: ObjToStl::objToStlConversion(std::string &filePath, Triangulation &triangulation)
 {
     ofstream outFile(filePath);
 
