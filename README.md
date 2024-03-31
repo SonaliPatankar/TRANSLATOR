@@ -23,7 +23,7 @@ const int v1() const; return first index
 const int v2() const; return second index
 const int v3() const; return third index
  
-# Triangulation.h/cpp: Manages a collection of triangles forming a 3D mesh.
+## Triangulation.h/cpp: Manages a collection of triangles forming a 3D mesh.
  
 Triangulation(): Constructor for Triangulation.
 ~Triangulation(): Destructor for Triangulation.
@@ -37,7 +37,7 @@ void readOBJ(std::string &filePath,Triangulation &triangulation): Reads an OBJ f
  
 void writeOBJ(std::string &filePath,Triangulation &triangulation):Function to write Triangulation data to an .txt file
  
-# STLReader.h/cpp : Read .stl file
+## STLReader.h/cpp : Read .stl file
  
 void readSTL(std::string &filePath, Triangulation &triangulation):Function to read data from an STL file and populate a Triangulation object
  
